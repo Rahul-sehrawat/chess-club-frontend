@@ -1,5 +1,5 @@
 import { Chess, Color, PieceSymbol, Square } from "chess.js";
-import { useState, useEffect} from "react";
+import { useState} from "react";
 import { MOVE, MOVES_HISTORY } from "../screens/Game";
 
 export const ChessBoard = ({ chess, board, socket, setBoard }: {

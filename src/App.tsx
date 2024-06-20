@@ -1,7 +1,5 @@
-// import { useState } from 'react'
 import './App.css'
 import { BrowserRouter, Route, Routes ,Navigate } from "react-router-dom";
-// import { Landing } from './screens/Landing';
 import { Game } from './screens/Game';
 import Puzzle from './screens/Puzzle';
 import Computer from './screens/Computer';
@@ -13,22 +11,11 @@ import Home from './screens/Home'
 import Login from './screens/Login'
 import Signup from './screens/Signup'
 import Navbar from './components/Navbar'
-import { Landing } from './screens/Landing';
 import Profile from './screens/Profile';
 
 function App() {
   const {user} = useAuthContext()
   return (
-    // <div className='h-screen bg-slate-950'>
-    //  <BrowserRouter>
-    //   <Routes>
-    //     <Route path="/" element={<Landing />} /> 
-    //     <Route path="/game" element={<Game />} /> 
-    //     <Route path='/puzzle' element={<Puzzle/>}/>
-    //     <Route path='/computer' element={<Computer/>}/>
-    //   </Routes>
-    // </BrowserRouter>
-    // </div>
     <div className="bg-black">
       <BrowserRouter>
         <Navbar />

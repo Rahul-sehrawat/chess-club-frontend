@@ -1,5 +1,4 @@
 
-
 function Computer() {
   return (
   <div className=" text-white ">This page is under developmet
