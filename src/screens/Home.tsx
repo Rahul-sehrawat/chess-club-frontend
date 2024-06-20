@@ -1,21 +1,15 @@
 
 import React from 'react';
-import { useAuthContext } from '../hooks/useAuthContext';
-import { Link } from 'react-router-dom';
+// import { useAuthContext } from '../hooks/useAuthContext';
 import { useNavigate } from "react-router-dom"
 import { Button } from "../components/PlayButton";
 
 const Home: React.FC = () => {
-  const { user } = useAuthContext();
-  let name = user?.email as string
+//   const { user } = useAuthContext();
+//   let name = user?.email as string
   const navigate = useNavigate();
   return (<div className=' homepagediv bg-slate-500'> 
-     {/* <Link className='text-white' to= '/computer'>computer
-     </Link>
-     <Link className='text-white' to= '/game'>game
-     </Link>
-     <Link className='text-white' to= '/puzzle'>puzzle
-     </Link> */}
+     
 
 
 
