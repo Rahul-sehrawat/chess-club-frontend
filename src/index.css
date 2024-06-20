@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* google font */
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap'); */
+
+/* layout */
+:root {
+  --primary: #1aac83;
+  --error: #e7195a;
+}
+
+
+body {
+  background: black;
+  margin: 0;
+  font-family: "Poppins";
+  height: 100vh;
+}
+header {
+  background: #6b5f5f57;
+ 
+ 
+}
+header .container {
+  max-width: 1400px;
+  height: 65px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header a {
+  color: #333;
+  text-decoration: none;
+}
+.pages{
+  max-width: 1400px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+/* homepage */
+.home {
+  color: white;
+  border: 2px solid red;
+  position:absolute;
+  width: 100%;
+  height: 100%;
+
+  height: 100%;
+}
+
+
+
+label {
+  font-size: 20px;
+  font-weight: 600;
+}
+input {
+  background-color: #b4bb99;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ad9494;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+form button {
+  background: black;
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+div.error {
+  padding: 10px;
+  background: #c8dbc6b6;
+  border: 1px solid wheat;
+  color: red;
+  border-radius: 4px;
+  margin: 20px 0;
+}
+input.error {
+  border: 1px solid var(--error);
+}
+
+/* navbar */
+nav {
+  display: flex;
+  align-items: center;
+}
+nav a, nav button {
+  margin-left: 10px;
+}
+nav button {
+  background: #817d7da5;
+  padding: 2px;
+  margin-left: 14px;
+  border-radius: 4px;
+  font-family: "Poppins";
+  cursor: pointer;
+  width: 36px;
+}
+
+/* auth forms */
+form.signup, form.login {
+  max-width: 400px;
+  padding: 20px;
+  background: rgba(104, 102, 102, 0.801);
+  border-radius: 14px;
+}
+
+.mydiv{
+  background-image: url('../public/hbg.png');
+  height: 100vh;
+  display: flex;
+  justify-content:space-around;
+  scroll-behavior: auto;
+  
+}
+
+.login ,.signup{
+  width: 500px;
+  height: 550px;
+  margin-top: 5rem;
+
+  
+}
+
+.loginpageInfo,.SignuppageInfo{
+   padding-top: 5rem;
+}
+
+.mybtn{
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/* main home page */
+.homepagediv{
+  background: #7d2f2f;
+  height: 100vh;
+}
