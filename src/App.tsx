@@ -34,7 +34,7 @@ function App() {
             />
             <Route 
               path="/game" 
-              element={user ? <Game /> : <Navigate to="/" />} 
+              element={!user ? <Game /> : <Navigate to="/" />} 
             />
             <Route 
               path="/computer" 
