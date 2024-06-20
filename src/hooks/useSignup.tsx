@@ -3,13 +3,13 @@ import { useAuthContext } from './useAuthContext';
 
 type UseSignupReturnType = {
   signup: (email: string, password: string , name:string) => Promise<void>;
-  isLoading: boolean | undefined | null;
+  isLoading: undefined | boolean ;
   error: string | null;
 };
 
 export const useSignup = (): UseSignupReturnType => {
   const [error, setError] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean | undefined >();
   const { dispatch } = useAuthContext();
 
   const signup = async (email: string, password: string ,name :string): Promise<void> => {

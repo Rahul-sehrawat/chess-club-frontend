@@ -1,4 +1,3 @@
-import './App.css'
 import { BrowserRouter, Route, Routes ,Navigate } from "react-router-dom";
 import { Game } from './screens/Game';
 import Puzzle from './screens/Puzzle';

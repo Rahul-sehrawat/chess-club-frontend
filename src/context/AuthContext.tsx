@@ -3,7 +3,6 @@ import { createContext, useReducer, useEffect, ReactNode, Dispatch } from 'react
 // Define User type
 type User = {
   name: string;
-  username: string;
   email: string;
   // Add other fields as needed
 };
@@ -13,7 +12,7 @@ type Action = { type: 'LOGIN'; payload: User } | { type: 'LOGOUT' };
 
 // Define AuthContextType
 export type AuthContextType = {
-  user: User | null;
+  user:  null | User ;
   dispatch: Dispatch<Action>;
 };
 
@@ -28,8 +27,8 @@ const initialState = {
 // Reducer function
 const authReducer = (state: typeof initialState, action: Action): typeof initialState => {
   switch (action.type) {
-    case 'LOGIN':
-      return { user: action.payload };
+    // case 'LOGIN':
+    //   return { user: action.payload };
     case 'LOGOUT':
       return { user: null };
     default:
