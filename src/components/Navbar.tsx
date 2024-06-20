@@ -9,7 +9,7 @@ const Navbar = () => {
   const handleClick = () => {
     logout()
   }
-
+  console.log(user?.email)
   return (
     <header>
       <div className="container">
@@ -21,12 +21,17 @@ const Navbar = () => {
         </Link>
         <nav>
           {user && (
-            <div className='flex items-center' > 
-              <Link to='/profile'>
-              <img  src='./avatar.png' width={36}/>
-              </Link> 
-             
-              <button   onClick={handleClick}><img src="./logout.png" width={36} /> </button>
+            <div className='flex items-center group '>
+                 <Link to='/profile'>
+                    <img src='./avatar.png' width={36} />
+                  </Link>
+              {/* <div className='hidden group-hover:flex'>
+                <p className='text-xl text-white'>{user.email}</p>
+              </div> */}
+                 
+              <button onClick={handleClick}>
+                <img src='./logout.png' width={36} />
+              </button>
             </div>
           )}
           {!user && (
