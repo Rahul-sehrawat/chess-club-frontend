@@ -3,7 +3,6 @@ import  { createContext, useReducer, useEffect, ReactNode, Dispatch } from 'reac
 // Define User type
 type User = {
   name: string;
-  username: string;
   email: string;
   // Add other fields as needed
 };
