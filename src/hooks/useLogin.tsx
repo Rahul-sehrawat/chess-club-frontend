@@ -17,7 +17,7 @@ export const useLogin = (): UseLoginReturnType => {
     setError(null);
 
     try {
-      const response = await fetch('https://chess-club-backend-main.onrender.com/api/user/signup', {
+      const response = await fetch('https://chess-club-backend-main.onrender.com/api/user/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
