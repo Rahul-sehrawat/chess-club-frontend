@@ -16,7 +16,7 @@ const Login = () => {
     <div className="mydiv ">
       <div className="SignuppageInfo">
         <img src="./gb.png" alt="" width={500} />
-        
+         
       </div>
     <form className="login" onSubmit={handleSubmit}>
       <h3 className="text-center pt-1 font-bold font-sans text-2xl">Log In</h3>
