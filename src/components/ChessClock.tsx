@@ -12,7 +12,7 @@ const ChessClock: React.FC<ClockProps> = ({ initialTime, player }) => {
     const timerRef = useRef<number | undefined>(); // Timer ID reference
 
     useEffect(() => {
-        ws.current = new WebSocket('ws://localhost:8080');
+        ws.current = new WebSocket('https://chess-club-backend-webs.onrender.com');
 
         ws.current.onmessage = (event) => {
             const data = JSON.parse(event.data);
