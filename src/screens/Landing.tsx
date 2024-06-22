@@ -4,11 +4,11 @@ import { Button } from "../components/PlayButton";
 export const Landing = () => {
     const navigate = useNavigate();
     return <div className=" w-full h-full flex justify-center items-start pt-12 " >
-            <div className=" border-black  bg-black bg-opacity-50 border-4 h-3/4  w-3/4  rounded-xl flex  justify-evenly p-10 shadow-[5px_5px_0px_0px_rgba(255,255,255)]   " >
+            <div className=" border-black  bg-black bg-opacity-80 border-4 h-3/4  w-3/4  rounded-xl flex  justify-evenly p-10 shadow-[5px_5px_0px_0px_rgba(255,255,255)]   " >
             {/* style={{backgroundImage: "url('/3.jpeg')",}} */}
                 <div >
                     <div className="  max-w-1/2  ">
-                        <video  src="video.mp4" width={500} autoPlay muted loop   ></video>
+                        <video  src="video.mp4" width={400} autoPlay muted loop   ></video>
                     </div>
                     
                 </div>
@@ -18,7 +18,7 @@ export const Landing = () => {
                         <h2 className="text-white pt-8 font-bold">-- Games Today</h2>
                         <h2 className="text-white pt-8 font-bold"> -- Playing Now</h2>
                         </div>
-                       <div className=" flex flex-col gap-10  m-12  ">
+                       <div className=" flex flex-col gap-10  m-12    ">
                        <div className=" rounded-lg shadow-[5px_5px_0px_0px_rgba(165,117,80)]   ">
                         <Button  onClick={() => {
                                 navigate("/game")
@@ -49,6 +49,7 @@ export const Landing = () => {
                                </div>
                         </Button>
                         </div>  
+                       
                        </div>
                         
                         

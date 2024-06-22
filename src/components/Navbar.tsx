@@ -9,7 +9,6 @@ const Navbar = () => {
   const handleClick = () => {
     logout()
   }
-  console.log(user?.email)
   return (
     <header>
       <div className="container">
@@ -22,6 +21,9 @@ const Navbar = () => {
         <nav>
           {user && (
             <div className='flex items-center group '>
+                  <Link to="/computer" className='text-white text-xl font-sans' >
+                    <img src="bot2.png" width={46}  />
+                </Link>
                  <Link to='/profile'>
                     <img src='./avatar.png' width={36} />
                   </Link>
@@ -35,7 +37,11 @@ const Navbar = () => {
             </div>
           )}
           {!user && (
-            <div className='w-60 flex gap-2'  >
+            <div className='w-96 flex gap-3'  >
+                <Link to="/computer" className='text-white text-xl font-sans' >
+                    <img src="bot2.png" width={46}  />
+                </Link>
+              
               <div className='text-white p-1 rounded-md  bg-slate-600 w-20  '><Link to="/login" className='text-white text-xl font-sans' >Login</Link></div>
               <div className='  text-white p-1 rounded-md  bg-slate-600 w-24  '><Link to="/signup" className=' text-white text-xl font-sans'>Signup</Link></div>
             </div>

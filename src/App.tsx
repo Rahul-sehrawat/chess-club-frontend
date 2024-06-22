@@ -1,8 +1,6 @@
 import { BrowserRouter, Route, Routes ,Navigate } from "react-router-dom";
 import { Game } from './screens/Game';
-import Puzzle from './screens/Puzzle';
 import Computer from './screens/Computer';
-
 import { useAuthContext } from './hooks/useAuthContext'
 
 // pages & components
@@ -34,11 +32,8 @@ function App() {
             />
             <Route 
               path="/computer" 
-              element={user ? <Computer /> : <Navigate to="/" />} 
-            />
-            <Route 
-              path="/puzzle" 
-              element={user ? <Puzzle /> : <Navigate to="/" />} 
+              // element={user ? <Computer /> : <Navigate to="/" />} 
+              element={<Computer/>}
             />
             <Route 
               path="/profile" 

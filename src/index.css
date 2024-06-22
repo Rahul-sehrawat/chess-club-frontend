@@ -2,22 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-/* google font */
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap'); */
 
-html{
+html, body, #root {
   height: 100%;
-  width: 100%;
-}
-body{
-  height: 100%;
-  width: 100%;
- 
-}
-
-#root{
-  height: 100%;
+  margin: 0;
+  overflow: hidden;
   background: #000;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 header {
@@ -26,7 +22,7 @@ header {
 
 header .container {
   max-width: 1400px;
-  height: 65px;
+  height: 55px;
   margin: 0 auto;
   padding: 10px 20px;
   display: flex;
@@ -120,8 +116,6 @@ form.signup, form.login {
 }
 
 
-/* customize style */
-
 .mydiv{
   height: 100vh;
   display: flex;
@@ -129,7 +123,6 @@ form.signup, form.login {
   scroll-behavior: auto;
   
 }
-
 
 .mybtn{
   display: flex;
@@ -153,18 +146,46 @@ form.signup, form.login {
   opacity: 0.8;
 }
 
+.h-full {
+  height: 100%;
+}
 
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
 
+.bg-gradient-to-b {
+  background: linear-gradient(to bottom, #0c0c1d, #111132);
+}
 
+.flex {
+  display: flex;
+}
 
+.justify-around {
+  justify-content: space-around;
+}
 
+.p-10 {
+  padding: 2.5rem; 
+}
 
+.opacity-40 {
+  opacity: 0.4;
+}
 
+.rounded-xl {
+  border-radius: 0.75rem; 
+}
 
+.h-screen {
+  height: 100vh;
+}
 
+.scroll-snap-y {
+  scroll-snap-type: y mandatory;
+}
 
-
-
-
-
-
+.scroll-snap-start {
+  scroll-snap-align: start;
+}
