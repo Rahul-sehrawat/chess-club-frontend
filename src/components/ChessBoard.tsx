@@ -70,7 +70,7 @@ export const ChessBoard = ({ chess, board, socket, setBoard }: {
                                
                                 
                         }
-                    }} key={j} className={`w-16 h-16 ${(i+j)%2 === 0 ? 'bg-gray-800' : ' bg-yellow-100'}`}>
+                    }} key={j} className={`w-16 h-16 hover:border-4 hover:bg-orange-400 ${(i+j)%2 === 0 ? 'bg-[_rgba(119,154,88)]' : ' bg-[_rgba(234,235,200)]'}`}>
                         <div className="w-full justify-center flex h-full">
                             <div className="h-full justify-center flex flex-col">
                                 {square ? <img className="w-12" src={`/${square?.color === "b" ? square?.type : `${square?.type?.toUpperCase()} copy`}.png`} /> : null} 
@@ -83,7 +83,7 @@ export const ChessBoard = ({ chess, board, socket, setBoard }: {
         })}
         </div>
         <div className=" bg-slate-900 w-full ">
-            <h1 className=" border-2 ml-6 p-2  mt-4 w-3/4 text-white font-bold text-center text-xl mb-2 ">Moves History</h1>
+            <h1 className=" border-2 ml-6 p-2  mt-4 w-3/4 text-white font-bold text-center text-xl mb-2 hover:bg-gray-700 ">Moves History</h1>
             <div className="text-white font-bold  flex justify-center">
                 <ul className="list-none p-0 w-full  ">
                     {MoveHistory.map((_, index) => (

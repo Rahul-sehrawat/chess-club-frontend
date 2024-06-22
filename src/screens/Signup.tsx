@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useSignup } from "../hooks/useSignup"
+import Navbar from "../components/Navbar"
 
 const Signup = () => {
   const [email, setEmail] = useState('')
@@ -14,12 +15,11 @@ const Signup = () => {
   }
 
   return (
-    <div className="mydiv ">
-      <div className="SignuppageInfo">
-        <img src="./gb.png" alt="" width={500} />
-        
-      </div>
-    <form className="signup" onSubmit={handleSubmit}>
+    <div className="signupContainer">
+      <Navbar/>
+    <div className="flex gap-14 justify-center ">
+    
+    <form className="signup"  onSubmit={handleSubmit}>
       <h3 className="text-center pt-1 font-bold font-sans text-2xl">Sign Up</h3>
 
       <label>Name:</label>
@@ -47,6 +47,7 @@ const Signup = () => {
       {error && <div className="error">{error}</div>}
       </div>
     </form>
+    </div>
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useLogin } from "../hooks/useLogin"
+import Navbar from "../components/Navbar"
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -13,11 +14,9 @@ const Login = () => {
   }
 
   return (
-    <div className="mydiv ">
-      <div className="SignuppageInfo">
-        <img src="./gb.png" alt="" width={500} />
-         
-      </div>
+    <div className="loginContainer">
+      <Navbar/>
+    <div className=" flex justify-evenly " >
     <form className="login" onSubmit={handleSubmit}>
       <h3 className="text-center pt-1 font-bold font-sans text-2xl">Log In</h3>
       
@@ -39,6 +38,7 @@ const Login = () => {
       {error && <div className="error">{error}</div>}
       </div>
     </form>
+    </div>
     </div>
   )
 }

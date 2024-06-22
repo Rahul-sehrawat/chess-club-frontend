@@ -3,45 +3,59 @@ import { Button } from "../components/PlayButton";
 
 export const Landing = () => {
     const navigate = useNavigate();
-    return <div className=" w-full h-full flex justify-center items-start pt-12   " style={{backgroundImage: "url('/hbg.png')",}}>
-            <div className=" border-black bg-black bg-opacity-70 border-4 h-5/6 w-4/5  rounded-xl flex justify-start p-12   ">
-                <div>
+    return <div className=" w-full h-full flex justify-center items-start pt-12 " >
+            <div className=" border-black  bg-black bg-opacity-50 border-4 h-3/4  w-3/4  rounded-xl flex  justify-evenly p-10 shadow-[5px_5px_0px_0px_rgba(255,255,255)]   " >
+            {/* style={{backgroundImage: "url('/3.jpeg')",}} */}
+                <div >
                     <div className="  max-w-1/2  ">
-                        <img src={"/gb.png"} className=" w-4/6 rounded-xl " />
+                        <video  src="video.mp4" width={500} autoPlay muted loop   ></video>
                     </div>
                     
                 </div>
-                <div className="" >
-                        <h1 className=" text-4xl font-bold text-white">Play Chess Online </h1>
-                        <div className="flex gap-12">
+                <div className=" text-center  "  >
+                        <h1 className=" text-4xl font-bold text-white">Play Chess Online  </h1>
+                        <div className="flex justify-center gap-10 ">
                         <h2 className="text-white pt-8 font-bold">-- Games Today</h2>
                         <h2 className="text-white pt-8 font-bold"> -- Playing Now</h2>
                         </div>
-                        <div className=" pl-2 pt-12 ">
-                        <Button onClick={() => {
+                       <div className=" flex flex-col gap-10  m-12  ">
+                       <div className=" rounded-lg shadow-[5px_5px_0px_0px_rgba(165,117,80)]   ">
+                        <Button  onClick={() => {
                                 navigate("/game")
                             }} >
-                                ♟️ Play Online 
+                                <div className="flex gap-4  ">
+                                <div>
+                                    <img src="picon.png" width={60} alt="" />
+                                </div>
+                                <div >
+                                <h1 className=" flex justify-start"> Play Online </h1>
+                               <p className="  pt-2 text-sm">Play with someone at your level</p>
+                               </div>
+                               </div>
                         </Button>
                         </div>  
-                        <div className=" pl-2 pt-12  ">
+                        <div className=" rounded-lg shadow-[5px_5px_0px_0px_rgba(165,117,80)]   ">
                         <Button  onClick={() => {
                                 navigate("/computer")
                             }} >
-                                🤖 Play Computer 
+                               <div className="flex gap-4">
+                                <div>
+                                    <img src="bot.png" width={60} alt="" />
+                                </div>
+                                <div >
+                                <h1 className=" flex justify-start"> Play Computer </h1>
+                               <p className="  pt-2 text-sm">Play vs customizable training bots</p>
+                               </div>
+                               </div>
                         </Button>
                         </div>  
-                        <div className=" pl-2 pt-12  ">
-                        <Button  onClick={() => {
-                                navigate("/puzzle")
-                            }} >
-                                🧩 Puzzles 
-                        </Button>
-                        </div>  
+                       </div>
+                        
                         
                 </div>
+                
 
             </div>
-           
+          
     </div>
 }
