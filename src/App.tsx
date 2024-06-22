@@ -9,16 +9,12 @@ import { useAuthContext } from './hooks/useAuthContext'
 import Home from './screens/Home'
 import Login from './screens/Login'
 import Signup from './screens/Signup'
-import Navbar from './components/Navbar'
 import Profile from './screens/Profile';
 
 function App() {
   const {user} = useAuthContext()
   return (
-    <div className="bg-black">
-      <BrowserRouter>
-        <Navbar />
-        <div className=" bg-black">
+      <BrowserRouter>  
           <Routes>
             <Route 
               path="/" 
@@ -49,9 +45,10 @@ function App() {
               element={user ? <Profile /> : <Navigate to="/" />} 
             />
           </Routes>
-        </div>
+     
       </BrowserRouter>
-    </div>
+      
+
 
 
   )
