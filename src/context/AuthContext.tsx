@@ -1,16 +1,12 @@
 import  { createContext, useReducer, useEffect, ReactNode, Dispatch } from 'react';
 
-// Define User type
 type User = {
   name: string;
-  email: string;
-  // Add other fields as needed
+  email: string; 
 };
 
-// Define Action type
 type Action = { type: 'LOGIN'; payload: User } | { type: 'LOGOUT' };
 
-// Define AuthContextType
 export type AuthContextType = {
   user: User | null;
   dispatch: Dispatch<Action>;

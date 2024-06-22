@@ -45,30 +45,21 @@ export const ChessBoard = ({ chess, board, socket, setBoard }: {
                             }))
 
                             setMoveHistory(prevMoveHistory => [...prevMoveHistory, squareRepresentation]);
-                            console.log("history:",MoveHistory)
+                           
                             
                             socket.send(JSON.stringify({
                                 type: MOVES_HISTORY,
                                 payload: MoveHistory
                                 
                             }))
-                            
-    
-                            
+                             
                             setFrom(null)
                             chess.move({
                                 from,
                                 to: squareRepresentation
                             });
                             setBoard(chess.board());
-                            console.log("table shows",{
-                                from,
-                                to: squareRepresentation
-                                
-                            })
-                            
-                               
-                                
+                                    
                         }
                     }} key={j} className={`w-16 h-16 hover:border-4 hover:bg-orange-400 ${(i+j)%2 === 0 ? 'bg-[_rgba(119,154,88)]' : ' bg-[_rgba(234,235,200)]'}`}>
                         <div className="w-full justify-center flex h-full">
