@@ -32,7 +32,6 @@ function App() {
             />
             <Route 
               path="/computer" 
-              // element={user ? <Computer /> : <Navigate to="/" />} 
               element={<Computer/>}
             />
             <Route 

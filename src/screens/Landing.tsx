@@ -8,7 +8,7 @@ export const Landing = () => {
             {/* style={{backgroundImage: "url('/3.jpeg')",}} */}
                 <div >
                     <div className="  max-w-1/2  ">
-                        <video  src="video.mp4" width={400} autoPlay muted loop   ></video>
+                        <video  src="video.mp4" width={400} autoPlay muted loop ></video>
                     </div>
                     
                 </div>
@@ -19,7 +19,7 @@ export const Landing = () => {
                         <h2 className="text-white pt-8 font-bold"> -- Playing Now</h2>
                         </div>
                        <div className=" flex flex-col gap-10  m-12    ">
-                       <div className=" rounded-lg shadow-[5px_5px_0px_0px_rgba(165,117,80)]   ">
+                       {/* <div className=" rounded-lg shadow-[5px_5px_0px_0px_rgba(165,117,80)]   "> */}
                         <Button  onClick={() => {
                                 navigate("/game")
                             }} >
@@ -29,12 +29,12 @@ export const Landing = () => {
                                 </div>
                                 <div >
                                 <h1 className=" flex justify-start"> Play Online </h1>
-                               <p className="  pt-2 text-sm">Play with someone at your level</p>
+                               <p className="  pt-2 hidden  md:block lg:block text-sm">Play with someone at your level</p>
                                </div>
                                </div>
                         </Button>
-                        </div>  
-                        <div className=" rounded-lg shadow-[5px_5px_0px_0px_rgba(165,117,80)]   ">
+                        {/* </div>   */}
+                        {/* <div className=" rounded-lg shadow-[5px_5px_0px_0px_rgba(165,117,80)]   "> */}
                         <Button  onClick={() => {
                                 navigate("/computer")
                             }} >
@@ -44,11 +44,11 @@ export const Landing = () => {
                                 </div>
                                 <div >
                                 <h1 className=" flex justify-start"> Play Computer </h1>
-                               <p className="  pt-2 text-sm">Play vs customizable training bots</p>
+                               <p className="  pt-2 hidden  md:block lg:block text-sm">Play vs customizable training bots</p>
                                </div>
                                </div>
                         </Button>
-                        </div>  
+                        {/* </div>   */}
                        
                        </div>
                         
