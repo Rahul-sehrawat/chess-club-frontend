@@ -23,6 +23,7 @@ export const Game = () => {
     const { user } = useAuthContext();
     const [playerInfo, setPlayerInfo] = useState<PlayerInfo | null>(null);
     const [moveHistory, setMoveHistory] = useState<string[]>([]);
+    const [gameover,setGameOver] = useState<boolean>(false)
 
     useEffect(() => {
         if (!socket) {
@@ -50,6 +51,7 @@ export const Game = () => {
 
                 case GAME_OVER:
                     console.log("Game over");
+                    setGameOver(true)
                     break;
             }
         };
@@ -58,7 +60,9 @@ export const Game = () => {
     if (!socket) return <div className="text-white font-bold">Connecting...</div>;
 
     return (
-        <div>
+        <div >
+          {/* {!gameover &&( */}
+            <div >
             <Navbar />
             <div className="justify-center flex bg-black h-full">
                 <div className="pt-2 max-w-screen-lg w-full">
@@ -107,6 +111,12 @@ export const Game = () => {
                     </div>
                 </div>
             </div>
+            </div> 
+            {gameover && (
+                <div className=" absolute top-11 mt-3 bg-slate-800  inset-0 flex justify-center items-center opacity-50">
+                    <div className="text-white opacity-60 text-8xl">Game Over</div>
+                </div>
+            )}
         </div>
     );
 };
