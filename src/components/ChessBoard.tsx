@@ -19,8 +19,17 @@ interface ChessBoardProps {
     moveHistory: string[]; 
 }
 
+
+
 export const ChessBoard: React.FC<ChessBoardProps> = ({ chess, board, socket, setBoard, playerColor, moveHistory }) => {
     const [from, setFrom] = useState<null | Square>(null);
+
+    const playSound = () => {
+        const audio = new Audio('/move.wav');
+        audio.play();
+    };
+
+    
 
     return (
         <div className="text-white-200 flex gap-10">
@@ -52,6 +61,7 @@ export const ChessBoard: React.FC<ChessBoardProps> = ({ chess, board, socket, se
                                                     to: squareRepresentation
                                                 });
                                                 setBoard(chess.board());
+                                                playSound()
                                             }
                                         }}
                                         key={j}

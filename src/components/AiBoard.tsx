@@ -16,12 +16,18 @@ export const AiBoard = ({ chess, board, setBoard }: {
 }) => {
     const [from, setFrom] = useState<null | Square>(null);
 
+    const playSound = () => {
+        const audio = new Audio('/move.wav');
+        audio.play();
+    };
+
     const handlePlayerMove = (to: Square) => {
         if (from) {  
             const move = chess.move({
                 from,
                 to,
             });
+            playSound();
 
             if (move) {
                 setBoard(chess.board());
@@ -39,6 +45,7 @@ export const AiBoard = ({ chess, board, setBoard }: {
         const moves = chess.moves();
         const move = moves[Math.floor(Math.random() * moves.length)];
         chess.move(move);
+        playSound();
         setBoard(chess.board());
     };
 

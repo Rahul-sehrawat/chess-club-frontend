@@ -25,6 +25,11 @@ export const Game = () => {
     const [moveHistory, setMoveHistory] = useState<string[]>([]);
     const [gameover,setGameOver] = useState<boolean>(false)
 
+    const playSound = () => {
+        const audio = new Audio('/move.wav');
+        audio.play();
+    };
+
     useEffect(() => {
         if (!socket) {
             return;
@@ -45,6 +50,7 @@ export const Game = () => {
                 case MOVE:
                     const move = message.payload;
                     chess.move(move);
+                    playSound();
                     setBoard(chess.board());
                     setMoveHistory(chess.history());
                     break;
