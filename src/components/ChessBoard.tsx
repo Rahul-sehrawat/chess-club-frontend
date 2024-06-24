@@ -17,11 +17,25 @@ interface ChessBoardProps {
     socket: WebSocket;
     playerColor: 'w' | 'b'; 
     moveHistory: string[]; 
+    startWhiteClock: () => void; 
+    startBlackClock: () => void; 
+    pauseWhiteClock: () => void; 
+    pauseBlackClock: () => void; 
 }
 
 
 
-export const ChessBoard: React.FC<ChessBoardProps> = ({ chess, board, socket, setBoard, playerColor, moveHistory }) => {
+export const ChessBoard: React.FC<ChessBoardProps> = ({ 
+    chess, 
+    board, 
+    socket, 
+    setBoard, 
+    playerColor, 
+    moveHistory, 
+    startWhiteClock,
+    startBlackClock,
+    pauseWhiteClock,
+    pauseBlackClock }) => {
     const [from, setFrom] = useState<null | Square>(null);
 
     const playSound = () => {
@@ -62,6 +76,13 @@ export const ChessBoard: React.FC<ChessBoardProps> = ({ chess, board, socket, se
                                                 });
                                                 setBoard(chess.board());
                                                 playSound()
+                                                if (playerColor === 'b') {
+                                                        pauseBlackClock();
+                                                        startWhiteClock();
+                                                    } else {
+                                                        pauseWhiteClock();
+                                                        startBlackClock();
+                                                }
                                             }
                                         }}
                                         key={j}
@@ -102,3 +123,5 @@ export const ChessBoard: React.FC<ChessBoardProps> = ({ chess, board, socket, se
         </div>
     );
 };
+
+
