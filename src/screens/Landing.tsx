@@ -19,7 +19,6 @@ export const Landing = () => {
                         <h2 className="text-white pt-8 font-bold"> -- Playing Now</h2>
                         </div>
                        <div className=" flex flex-col gap-10  m-12    ">
-                       {/* <div className=" rounded-lg shadow-[5px_5px_0px_0px_rgba(165,117,80)]   "> */}
                         <Button  onClick={() => {
                                 navigate("/game")
                             }} >
@@ -33,8 +32,6 @@ export const Landing = () => {
                                </div>
                                </div>
                         </Button>
-                        {/* </div>   */}
-                        {/* <div className=" rounded-lg shadow-[5px_5px_0px_0px_rgba(165,117,80)]   "> */}
                         <Button  onClick={() => {
                                 navigate("/computer")
                             }} >
@@ -47,9 +44,7 @@ export const Landing = () => {
                                <p className="  pt-2 hidden  md:block lg:block text-sm">Play vs customizable training bots</p>
                                </div>
                                </div>
-                        </Button>
-                        {/* </div>   */}
-                       
+                        </Button>  
                        </div>
                         
                         
