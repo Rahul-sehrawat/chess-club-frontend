@@ -28,6 +28,7 @@ export const Game = () => {
     const [blackTime, setBlackTime] = useState(300); 
     const whiteInterval = useRef<number | null>(null);
     const blackInterval = useRef<number | null>(null);
+    const [winner,setwinner] = useState<String |null>("");
 
 
     const startWhiteClock = () => {
@@ -100,6 +101,7 @@ export const Game = () => {
 
                 case GAME_OVER:
                     console.log("Game over");
+                    setwinner(message.payload.winner);
                     setGameOver(true)
                     if (whiteInterval.current !== null) clearInterval(whiteInterval.current);
                     if (blackInterval.current !== null) clearInterval(blackInterval.current);
@@ -216,7 +218,10 @@ export const Game = () => {
             </div> 
             {gameover && (
                 <div className=" absolute top-11 mt-3 bg-slate-800  inset-0 flex justify-center items-center opacity-50">
-                    <div className="text-white opacity-60 text-8xl">Game Over</div>
+                   <div className="">
+                   <div className="text-white opacity-60 text-8xl">Game Over</div>
+                   <div className="text-white opacity-60 text-8xl">{winner} wins</div>
+                   </div>
                 </div>
             )}
         </div>
