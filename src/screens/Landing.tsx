@@ -5,12 +5,10 @@ export const Landing = () => {
     const navigate = useNavigate();
     return <div className=" w-full h-full flex justify-center items-start pt-12 " >
             <div className=" border-black  bg-black bg-opacity-80 border-4 h-3/4  w-3/4  rounded-xl flex  justify-evenly p-10 shadow-[5px_5px_0px_0px_rgba(255,255,255)]   " >
-            {/* style={{backgroundImage: "url('/3.jpeg')",}} */}
                 <div >
                     <div className="  max-w-1/2  ">
                         <video  src="video.mp4" width={400} autoPlay muted loop ></video>
                     </div>
-                    
                 </div>
                 <div className=" text-center  "  >
                         <h1 className=" text-4xl font-bold text-white">Play Chess Online  </h1>
@@ -45,13 +43,8 @@ export const Landing = () => {
                                </div>
                                </div>
                         </Button>  
-                       </div>
-                        
-                        
+                       </div>  
                 </div>
-                
-
             </div>
-          
     </div>
 }

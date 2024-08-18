@@ -20,15 +20,7 @@ const Home: React.FC = () => {
                 </div>
                 <div className="absolute inset-0 flex justify-center items-center ">
                     <Pawn/>
-                </div>
-
-                {/* card component for future development */}
-                {/* <div>
-                <div className='text-white absolute top-40  w-96  left-10'>
-                <Card heading="chess opening" imgsrc ="./learn.png"/>
-                </div>
-                </div> */}
-            
+                </div>            
               </div>
             
           </section>
