@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useAuthContext } from '../hooks/useAuthContext'
 
-const WS_URL = "https://chess-club-backend-webs.onrender.com";
+const WS_URL = import.meta.env.VITE_WEBSOCKET_URL;;
 // const WS_URL = "ws://localhost:8080";
 
 

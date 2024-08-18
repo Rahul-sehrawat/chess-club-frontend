@@ -4,10 +4,8 @@ import { Landing } from './Landing';
 import Globe from '../components/Globe';
 import Pawn from '../components/Pawn';
 import Footer from '../components/Footer';
-// import Card from '../components/Card';
 
 const Home: React.FC = () => {
-
   return( 
     <div className="h-full overflow-y-scroll" style={{ scrollSnapType: 'y mandatory' }}>  
         <div>

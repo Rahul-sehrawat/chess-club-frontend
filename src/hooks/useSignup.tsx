@@ -11,13 +11,14 @@ export const useSignup = (): UseSignupReturnType => {
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean | undefined >();
   const { dispatch } = useAuthContext();
+  const signupUrl = import.meta.env.VITE_SIGNUP_URL;
 
   const signup = async (email: string, password: string ,name :string): Promise<void> => {
     setIsLoading(true);
     setError(null);
 
     try {
-      const response = await fetch('https://chess-club-backend-main.onrender.com/api/user/signup', {
+      const response = await fetch(signupUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password, name }),

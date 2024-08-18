@@ -12,12 +12,15 @@ export const useLogin = (): UseLoginReturnType => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const { dispatch } = useAuthContext();
 
+  const loginUrl = import.meta.env.VITE_LOGIN_URL;
+
+
   const login = async (email: string, password: string): Promise<void> => {
     setIsLoading(true);
     setError(null);
 
     try {
-      const response = await fetch('https://chess-club-backend-main.onrender.com/api/user/login', {
+      const response = await fetch(loginUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password}),

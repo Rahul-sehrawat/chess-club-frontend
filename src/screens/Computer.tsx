@@ -25,8 +25,6 @@ const Computer: React.FC = () => {
     <div className='flex justify-center items-end'>
       
       <div >
-        {/* <h1 className='text-white font-bold text-3xl p-6  text-center'>Low-level Chess Engine</h1> */}
-
         <div className='flex pb-2 font-sans font-bold text-white items-center gap-2'>
         <img src="/bot.png " width={44}></img><span className=" text-2xl">Chess Engine</span><span className=" font-thin">{`(700 )`}</span>
         </div>
