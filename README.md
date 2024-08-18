@@ -94,8 +94,8 @@ To get the project up and running on your local machine, follow these steps:
 5. Access the Application
 
     - Frontend: Open your browser and navigate to http://localhost:5173 to access the frontend application.
-    - Backend API: The backend server will be running at http://localhost:5000 (or the port specified in your .env file).
-    - WebSocket Server: The WebSocket server will be running at ws://localhost:4000 (or the port specified in your .env file).
+    - Backend API: The backend server will be running at http://localhost:4000 (or the port specified in your .env file).
+    - WebSocket Server: The WebSocket server will be running at ws://localhost:8080 (or the port specified in your .env file).
 
 # Contributing
 
