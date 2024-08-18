@@ -67,13 +67,13 @@ export const AiBoard = ({ chess, board, setBoard }: {
                                         }
                                     }}
                                     key={j}
-                                    className={`w-16 h-16 hover:border-4 hover:bg-orange-400 ${(i + j) % 2 === 0 ? 'bg-[#779A58]' : 'bg-[#EAEBC8]'}`}
+                                    className={` w-8 h-8 md:w-16 md:h-16 hover:border-4 hover:bg-orange-400 ${(i + j) % 2 === 0 ? 'bg-[#779A58]' : 'bg-[#EAEBC8]'}`}
                                 >
                                     <div className="w-full justify-center flex h-full">
                                         <div className="h-full justify-center flex flex-col">
                                             {square ? (
                                                 <img
-                                                    className="w-12"
+                                                    className="w-6 md:w-12"
                                                     src={`/${square.color === "b" ? square.type : `${square.type.toUpperCase()} copy`}.png`}
                                                     alt={`${square.color}${square.type}`}
                                                 />
