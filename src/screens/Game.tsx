@@ -15,6 +15,21 @@ interface PlayerInfo {
     name: string;
 }
 
+const themes = [
+    { name: 'Green', color1: '#769656', color2: '#eeeed2' },
+    { name: 'Classic', color1: '#d18b47', color2: '#ffce9e' },
+    { name: 'Gray', color1: '#808080', color2: '#d3d3d3' },
+    { name: 'Red', color1: '#d32f2f', color2: '#ffcdd2' },
+    { name: 'Purple', color1: '#7e57c2', color2: '#e1bee7' },
+    { name: 'Orange', color1: '#ff7043', color2: '#ffe0b2' },
+    { name: 'Teal', color1: '#00897b', color2: '#b2dfdb' },
+    { name: 'Brown', color1: '#8d6e63', color2: '#d7ccc8' },
+    { name: 'Navy', color1: '#3949ab', color2: '#c5cae9' },
+    { name: 'Earth', color1: '#6b4423', color2: '#f0e68c' },
+  
+  ];
+
+
 export const Game = () => {
     const socket = useSocket();
     const [chess] = useState(new Chess());
@@ -29,6 +44,7 @@ export const Game = () => {
     const whiteInterval = useRef<number | null>(null);
     const blackInterval = useRef<number | null>(null);
     const [winner,setwinner] = useState<String |null>("");
+    const [selectedTheme, setSelectedTheme] = useState(themes[0]);
 
 
     const startWhiteClock = () => {
@@ -133,10 +149,32 @@ export const Game = () => {
                 <div className="pt-2 max-w-screen-lg w-full">
                     <div className="grid grid-cols-6 gap-4 w-full">
                         <div className="col-span-5 w-full flex justify-center flex-col">
-                            
                             {playerInfo && (
-                                 <>
+                                <div className="flex w-screen">
+                                    <div className='pb-4 mt-8 m-10 '>
+                                        <label className="text-white font-bold mr-2">Theme:</label>
+                                        <select
+                                            className="p-2 rounded bg-gray-800 text-white"
+                                            value={selectedTheme.name}
+                                            onChange={(e) => {
+                                                const theme = themes.find(t => t.name === e.target.value);
+                                                if (theme) {
+                                                    setSelectedTheme(theme);
+                                                    console.log(`theme is`,theme)
+                                                }
+                                            }}
+                                        >
+                                            {themes.map((theme) => (
+                                                <option key={theme.name} value={theme.name}>
+                                                    {theme.name}
+                                                </option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                
+                                 <div>
                                  {playerInfo.color === 'white' && (   
+
                                      <div className="text-white flex font-bold text-xl items-end text-center mb-2">
                                          <div className="text-white bottom-2 w-1/2 font-bold text-xl  flex gap-2 items-center">
                                                 <img src="/avatar.png" width={38} alt="avatar" />
@@ -168,6 +206,8 @@ export const Game = () => {
                                     startBlackClock={startBlackClock}
                                     pauseWhiteClock={pauseWhiteClock}
                                     pauseBlackClock={pauseBlackClock}
+                                    color1={selectedTheme.color1} 
+                                    color2={selectedTheme.color2}
                                 />
                                   {playerInfo.color === 'white' && (
                                     <div className="text-white flex font-bold text-xl items-end text-center mb-2">
@@ -191,8 +231,9 @@ export const Game = () => {
                                     <div className="border-2 rounded-md pl-1 pr-1 bg-gray-700" >{formatTime(blackTime)}</div>
                                 </div>
                                 )}
-                            </>
-
+                            </div>
+                        
+                        </div>
                             )}
                         </div>
                         <div className="col-span-1 h-20 w-20 flex justify-center"></div>

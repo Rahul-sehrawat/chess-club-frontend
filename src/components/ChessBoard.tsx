@@ -15,6 +15,8 @@ interface ChessBoardProps {
         color: Color;
     } | null)[][];
     socket: WebSocket;
+    color1:string;
+    color2:string;
     playerColor: 'w' | 'b'; 
     moveHistory: string[]; 
     startWhiteClock: () => void; 
@@ -32,6 +34,8 @@ export const ChessBoard: React.FC<ChessBoardProps> = ({
     setBoard, 
     playerColor, 
     moveHistory, 
+    color1,
+    color2,
     startWhiteClock,
     startBlackClock,
     pauseWhiteClock,
@@ -53,6 +57,7 @@ export const ChessBoard: React.FC<ChessBoardProps> = ({
                         <div key={i} className="flex">
                             {row.map((square, j) => {
                                 const squareRepresentation = String.fromCharCode(97 + j) + (8 - i) as Square;
+                                const squareColor = (i + j) % 2 === 0 ? color1 : color2;
 
                                 return (
                                     <div
@@ -86,7 +91,8 @@ export const ChessBoard: React.FC<ChessBoardProps> = ({
                                             }
                                         }}
                                         key={j}
-                                        className={`w-16 h-16 hover:border-4 hover:bg-orange-400 ${(i + j) % 2 === 0 ? 'bg-[_rgba(119,154,88)]' : 'bg-[_rgba(234,235,200)]'}`}
+                                        style={{ backgroundColor: squareColor }}
+                                        className="w-8 h-8 md:w-16 md:h-16 hover:border-4 border-red-600"
                                     >
                                         <div className="w-full justify-center flex h-full">
                                             <div className={`h-full justify-center flex flex-col ${playerColor === 'b' ? 'rotate-180' : ''}`}>
@@ -100,7 +106,7 @@ export const ChessBoard: React.FC<ChessBoardProps> = ({
                     );
                 })}
             </div>
-            <div className="bg-slate-900 w-full">
+            <div className="bg-slate-900 w-72 rounded-lg">
                 <h1 className="border-2 ml-6 p-2 mt-4 w-3/4 text-white font-bold text-center text-xl mb-2 hover:bg-gray-700">Moves History</h1>
                 <div className="text-white font-bold flex justify-center">
                     <ul className="list-none p-0 w-full">
