@@ -1,8 +1,9 @@
 import { Chess, Color, PieceSymbol, Square } from "chess.js";
 import { useState } from "react";
 
-export const AiBoard = ({ chess, board, setBoard }: {
+export const AiBoard = ({ chess, board, setBoard, color1,color2 }: {
     chess: Chess;
+    
     setBoard: React.Dispatch<React.SetStateAction<({
         square: Square;
         type: PieceSymbol;
@@ -13,6 +14,8 @@ export const AiBoard = ({ chess, board, setBoard }: {
         type: PieceSymbol;
         color: Color;
     } | null)[][];
+    color1: string;
+    color2: string;
 }) => {
     const [from, setFrom] = useState<null | Square>(null);
 
@@ -28,11 +31,13 @@ export const AiBoard = ({ chess, board, setBoard }: {
                 to,
             });
             playSound();
+            console.log(chess.history())
 
             if (move) {
                 setBoard(chess.board());
                 if (!chess.isGameOver()) {
                     setTimeout(() => handleComputerMove(), 500);  
+                    console.log(chess.history())
                 }
             } else {
                 console.log("Invalid move");
@@ -47,6 +52,7 @@ export const AiBoard = ({ chess, board, setBoard }: {
         chess.move(move);
         playSound();
         setBoard(chess.board());
+        
     };
 
     return (
@@ -56,6 +62,7 @@ export const AiBoard = ({ chess, board, setBoard }: {
                     <div key={i} className="flex">
                         {row.map((square, j) => {
                             const squareRepresentation = String.fromCharCode(97 + (j % 8)) + (8 - i) as Square;
+                            const squareColor = (i + j) % 2 === 0 ? color1 : color2;
 
                             return (
                                 <div
@@ -67,7 +74,8 @@ export const AiBoard = ({ chess, board, setBoard }: {
                                         }
                                     }}
                                     key={j}
-                                    className={` w-8 h-8 md:w-16 md:h-16 hover:border-4 hover:bg-orange-400 ${(i + j) % 2 === 0 ? 'bg-[#779A58]' : 'bg-[#EAEBC8]'}`}
+                                    style={{ backgroundColor: squareColor }}
+                                    className="w-8 h-8 md:w-16 md:h-16 hover:border-4 border-red-600"
                                 >
                                     <div className="w-full justify-center flex h-full">
                                         <div className="h-full justify-center flex flex-col">
@@ -89,3 +97,6 @@ export const AiBoard = ({ chess, board, setBoard }: {
         </div>
     );
 };
+
+
+
