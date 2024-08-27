@@ -45,6 +45,7 @@ export const Game = () => {
     const blackInterval = useRef<number | null>(null);
     const [winner,setwinner] = useState<String |null>("");
     const [selectedTheme, setSelectedTheme] = useState(themes[0]);
+    const [findingGame, setFindingGame] = useState(false);
 
 
     const startWhiteClock = () => {
@@ -241,16 +242,22 @@ export const Game = () => {
                     <div className="pt-1">
                         {!started && (
                             <button
-                                className="bg-gray-500 p-2 w-40 text-lg font-bold rounded-md text-white hover:text-black hover:w-44 hover:bg-green-500"
+                                className={`p-2 w-40 text-lg font-bold rounded-md text-white ${
+                                    findingGame
+                                     ? 'bg-gray-500'
+                                     : 'bg-gray-500 hover:text-black hover:w-44 hover:bg-green-500'
+                                  }`}
                                 onClick={() => {
+                                    setFindingGame(true);
                                     socket.send(
                                         JSON.stringify({
                                             type: INIT_GAME,
                                         })
                                     );
                                 }}
+                                disabled={findingGame}
                             >
-                                Find Game
+                                {findingGame ? 'Finding Game...' : 'Find Game'}
                             </button>
                         )}
                     </div>
